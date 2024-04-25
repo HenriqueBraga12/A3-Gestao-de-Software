@@ -89,7 +89,7 @@ Testes Realizados:
 - **Caso 1**: Verificou se a tabela era exibida corretamente com valores simulados.
   
 - **Caso 2**: Testou a exibição da tabela sem dados para garantir que o resultado seria uma lista vazia.
-  # **Cálculo do IMC**
+# **Cálculo do IMC**
 Propósito: Testar o método calculoImca, que calcula o IMC com base em peso e altura e retorna uma classificação correspondente.
 Testes Realizados:
  - **Caso 1:** Testou a classificação do IMC no intervalo "Normal", garantindo que o método calculasse o valor do IMC e atribuísse a classificação correta.
