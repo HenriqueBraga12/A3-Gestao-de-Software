@@ -82,12 +82,13 @@ O projeto utiliza um banco de dados H2 em memória por padrão. Não é necessá
 - **Framework de Testes:** Utilizamos JUnit 5 para estruturar os testes.
 - **Simulação de Dependências:** Usamos Mockito para simular interações com o repositório ImcRepository.
 ---
-#**Casos de Teste**
+# **Casos de Teste**
 - **Exibir Tabela IMC**
 Propósito: Testar o método exibirTabelaImc, garantindo que ele retorna a lista de registros como objetos ImcTableDto.
 Testes Realizados:
-1.**Caso 1**: Verificou se a tabela era exibida corretamente com valores simulados.
-2.**Caso 2**: Testou a exibição da tabela sem dados para garantir que o resultado seria uma lista vazia.
+- **Caso 1**: Verificou se a tabela era exibida corretamente com valores simulados.
+  
+- **Caso 2**: Testou a exibição da tabela sem dados para garantir que o resultado seria uma lista vazia.
   # **Cálculo do IMC**
 Propósito: Testar o método calculoImca, que calcula o IMC com base em peso e altura e retorna uma classificação correspondente.
 Testes Realizados:
