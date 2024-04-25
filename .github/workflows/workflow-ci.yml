@@ -29,7 +29,7 @@ jobs:
         architeture: x64
         cache: maven
     - name: Build with Maven
-      run: mvn -B package -f ProjetoA3/A3/pom.xml
+      run: mvn -B package -f A3_Gestao/ProjetoA3/A3
     - name: Memorizar dependências
       run: mvn --batch-mode --update-snapshots verify
   
