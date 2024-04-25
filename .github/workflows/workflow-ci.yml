@@ -34,6 +34,9 @@ jobs:
         run: mvn -B package -f A3-Gestao-de-Software/A3_Gestao/ProjetoA3/A3
       - name: Memorizar dependências
         run: mvn --batch-mode --update-snapshots verify -f A3-Gestao-de-Software/A3_Gestao/ProjetoA3/A3
+      - name: Update dependency graph
+        uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
+
   test:
     runs-on: ubuntu-latest
     needs: build
@@ -45,7 +48,4 @@ jobs:
           distribution: 'temurin'
       - name: Run the Maven verify phase
         run: mvn --batch-mode --update-snapshots verify -f A3-Gestao-de-Software/A3_Gestao/ProjetoA3/A3   
-      - name: Update dependency graph
-        env:
-          MAVEN_POM_FILE: 'A3-Gestao-de-Software/A3_Gestao/ProjetoA3/A3/pom.xml'
-          uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
+
