@@ -7,6 +7,7 @@ VALUES
     (39.9, 5, 'Obesidade de Classe 2'),
     (40.0, 6, 'Obesidade de Classe 3');
 
+<<<<<<< HEAD
 INSERT INTO tb_usuario (user_name, user_email, user_cpf, peso, altura)
 VALUES
 (1,'Lucas', 'lucas@gmail.com', '111.111.111-11', 70.5, 1.75),
@@ -23,3 +24,11 @@ VALUES
 ('Rua C', 'Cidade C', 'Estado C', '33333-333', LAST_INSERT_ID(3)),
 ('Rua D', 'Cidade D', 'Estado D', '44444-444', LAST_INSERT_ID(4)),
 ('Rua E', 'Cidade E', 'Estado E', '55555-555', LAST_INSERT_ID(5));
+=======
+
+
+
+
+
+
+>>>>>>> ebb8c0ce0daf3749bd82717f1da0232af2f9ab0b
