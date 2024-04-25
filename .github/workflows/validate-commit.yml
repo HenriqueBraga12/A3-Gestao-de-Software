@@ -1,0 +1,31 @@
+name: Validação de commit
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  validate-commit-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do commit
+        uses: actions/checkout@v4
+      - name: Validate Commit Message
+        run: |
+          # Regex to validate the type pattern
+          REGEX="^((Merge[ a-z-]* branch.)|(Revert)|((build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\(.\))?!?: .))"
+          
+          COMMIT_MESSAGE=$(git log --format=%B -n 1 $GITHUB_SHA)
+          
+          echo "Commit Message: ${COMMIT_MESSAGE}"
+          
+          if ! [[ $COMMIT_MESSAGE =~ $REGEX ]]; then
+            echo >&2 "ERROR: Commit aborted for not following the Conventional Commit standard."
+            exit 1
+          else
+            echo >&2 "Valid commit message."
+          fi
