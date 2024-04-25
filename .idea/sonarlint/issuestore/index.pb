@@ -1,0 +1,23 @@
+
+ç
+]A3_Gestao/ProjetoA3/A3/src/main/java/com/core/imccalculator/controller/UsuarioController.java,1\1\119a61aff07d78a539082dfe10d74090469c936d
+ì
+cA3_Gestao/ProjetoA3/A3/src/main/java/com/core/imccalculator/controller/ImcCalculatorController.java,c\0\c092856bb8439faa852683b0bf029c24a06e5b09
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+ç
+]A3_Gestao/ProjetoA3/A3/src/main/java/com/core/imccalculator/service/ImcCalculatorService.java,a\d\ad9143944538a3606b0c773b8994c24c96f0c388
+á
+WA3_Gestao/ProjetoA3/A3/src/main/java/com/core/imccalculator/service/UsuarioService.java,5\d\5dad54a2f4180db3844346d9ade6391acb5200a9
+Ä
+PA3_Gestao/ProjetoA3/A3/src/main/java/com/core/imccalculator/dto/ImcValueDto.java,0\0\00522559761b2d5ee607de32b2da559ae62182ae
+Ä
+PA3_Gestao/ProjetoA3/A3/src/main/java/com/core/imccalculator/dto/ImcTableDto.java,8\2\825ae62c7de9a53b127ff3a385eb126a9fd99d4e
+â
+YA3_Gestao/ProjetoA3/A3/src/main/java/com/core/imccalculator/ImcCalculatorApplication.java,a\3\a370eec62403fd1721b5b00d80b3192abbdb4ff0
+}
+MA3_Gestao/ProjetoA3/A3/src/main/java/com/core/imccalculator/entity/TbImc.java,7\a\7a4cec61c6691561ebdd89a552641b833830545b
+
+OA3_Gestao/ProjetoA3/A3/src/main/java/com/core/imccalculator/entity/Usuario.java,1\8\180a180274fecb47133e37a5a01b5e2b16721282
+Ä
+PA3_Gestao/ProjetoA3/A3/src/main/java/com/core/imccalculator/entity/Endereco.java,0\e\0e3d99a7a18ed6eac41f6938c38f96604bef64eb

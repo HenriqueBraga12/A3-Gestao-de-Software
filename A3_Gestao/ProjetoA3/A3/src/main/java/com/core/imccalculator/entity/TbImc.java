@@ -2,7 +2,6 @@ package com.core.imccalculator.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.annotations.Immutable;
 
 @Entity
 @Data
