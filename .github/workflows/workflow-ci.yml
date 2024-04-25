@@ -24,7 +24,11 @@ jobs:
         run: mvn -B package -f A3_Gestao/ProjetoA3/A3/pom.xml
       - name: Memorizar dependências
         run: mvn --batch-mode --update-snapshots verify -f A3_Gestao/ProjetoA3/A3/pom.xml
-
+      # Adicionando comandos para limpar o diretório target e o repositório Maven local
+      - name: Clean target directory
+        run: rm -rf A3_Gestao/ProjetoA3/A3/target
+      - name: Clean local Maven repository
+        run: rm -rf ~/.m2/repository
 
 
   test:
