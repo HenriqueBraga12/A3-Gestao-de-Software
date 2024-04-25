@@ -1,9 +1,8 @@
 package com.core.imccalculator.dto;
 
 import com.core.imccalculator.entity.Endereco;
-import lombok.Getter;
 
-@Getter
+
 public record UsuarioDTO(Long idUsuario,
                          String name,
                          String email,

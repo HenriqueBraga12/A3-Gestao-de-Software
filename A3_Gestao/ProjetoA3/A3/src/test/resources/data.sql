@@ -6,3 +6,5 @@ VALUES
     (34.9, 4,  'Obesidade de Classe 1'),
     (39.9, 5, 'Obesidade de Classe 2'),
     (40.0, 6, 'Obesidade de Classe 3');
+
+
