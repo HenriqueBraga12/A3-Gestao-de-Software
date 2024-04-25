@@ -24,7 +24,7 @@ public class ImcCalculatorService {
         List<ImcTableDto> imcTableDtos = new ArrayList<>();
         log.info("Total de registros encontrados na tabela tb_imc: {}", tbImcList.size());
         for (TbImc tbImc : tbImcList) {
-            tbImc.getId();
+
             imcTableDtos.add(new ImcTableDto(tbImc.getId(),
                     tbImc.getImc(),
                     tbImc.getClassificacao()));
@@ -35,21 +35,18 @@ public class ImcCalculatorService {
 
     public ImcValueDto calculoImc(Double peso, Double altura) {
 
-        Double imc = peso / Math.pow(altura, 2);
-        String classificacao = new String();
+        double imc = peso / Math.pow(altura, 2);
+        String classificacao = null;
         List<TbImc> tbImcList = imcRepository.findAll();
-        log.debug("Essa é a lista", "Tamanho ---> ", tbImcList.size(), "valores ----> ", tbImcList);
 
         for (int c = 0; c < tbImcList.size(); c++) {
-            if (c == 0 && imc <= tbImcList.get(c).getImc()) {
+            if (imc <= tbImcList.get(c).getImc()) {
                 classificacao = tbImcList.get(c).getClassificacao();
                 break; // Sai do loop assim que encontrar a classificação
-            } else if (c > 0 && imc <= tbImcList.get(c).getImc()) {
-                classificacao = tbImcList.get(c).getClassificacao();
-                break; // Sai do loop assim que encontrar a classificação
-            } else if ( imc > 40.0){
-                classificacao =  tbImcList.get(5).getClassificacao();
             }
+        }
+        if (imc > tbImcList.get(tbImcList.size() - 1).getImc()) {
+            classificacao = tbImcList.get(tbImcList.size() - 1).getClassificacao();
         }
         return new ImcValueDto(imc, classificacao);
     }

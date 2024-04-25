@@ -3,8 +3,11 @@ package com.core.imccalculator.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+<<<<<<< HEAD
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Immutable;
+=======
+>>>>>>> develop
 
 @NoArgsConstructor
 @AllArgsConstructor
