@@ -33,8 +33,9 @@ jobs:
       - name: Build with Maven
         run: mvn -B package
       - name: Memorizar dependências
-        run: mvn --batch-mode --update-snapshots verify
-  
+        run: |
+          cd ../A3-Gestao-de-Software/A3_Gestao/ProjetoA3/A3
+          mvn --batch-mode --update-snapshots verify
   test:
     runs-on: ubuntu-latest
     needs: build
