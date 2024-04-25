@@ -78,11 +78,11 @@ O projeto utiliza um banco de dados H2 em memória por padrão. Não é necessá
 - **GET /imcCalculator: Retorna a tabela de classificação do Índice de Massa Corporal (IMC).**
 ---
 # **Testes**  
- #**Estrutura dos Testes**
+# **Estrutura dos Testes**
 - **Framework de Testes:** Utilizamos JUnit 5 para estruturar os testes.
 - **Simulação de Dependências:** Usamos Mockito para simular interações com o repositório ImcRepository.
 ---
-# **Casos de Teste**
+#**Casos de Teste**
 - **Exibir Tabela IMC**
 Propósito: Testar o método exibirTabelaImc, garantindo que ele retorna a lista de registros como objetos ImcTableDto.
 Testes Realizados:
@@ -92,14 +92,23 @@ Testes Realizados:
 Propósito: Testar o método calculoImca, que calcula o IMC com base em peso e altura e retorna uma classificação correspondente.
 Testes Realizados:
 **1. **Caso 1:** Testou a classificação do IMC no intervalo "Normal", garantindo que o método calculasse o valor do IMC e atribuísse a classificação correta.
-**2. **Caso 2:** Testou uma condição de "Baixo Peso", verificando se o método funcionava como esperado.
-**3. **Caso 3:** Testou uma condição de "Obesidade Grau I", garantindo a precisão do cálculo e a atribuição correta da classificação.
-**4. **Caso 4:** Testou uma condição fora do intervalo conhecido, garantindo que o método retornasse uma classificação nula para valores de IMC fora dos limites conhecidos.
+
+- **2. **Caso 2:** Testou uma condição de "Baixo Peso", verificando se o método funcionava como esperado.
+
+- **3. **Caso 3:** Testou uma condição de "Obesidade Grau I", garantindo a precisão do cálculo e a atribuição correta da classificação.
+
+- **4. **Caso 4:** Testou uma condição fora do intervalo conhecido, garantindo que o método retornasse uma classificação nula para valores de IMC fora dos limites conhecidos.
+
 **Testes para Criação de Usuários**
-**1. **Teste de Criação de Usuário com Dados Válidos:** Este teste verificou a criação de um usuário com dados válidos. Confirmamos que o método novoUsuario chama o método save do repositório corretamente e que o UsuarioDTO retornado contém os dados esperados. Incluímos verificações para cada campo do DTO, garantindo que os valores correspondem aos do objeto Usuario original.
-**2. **Teste de Criação de Usuário com Dados Inválidos:** Este teste simulou a tentativa de criar um usuário com dados inválidos, como campos obrigatórios ausentes ou valores incorretos. O teste verificou como o sistema lida com campos como CPF, e-mail e outros valores importantes.
-**3. **Teste de Salvamento do Repositório:** Este teste verificou se o método save do repositório foi chamado com o objeto Usuario correto, garantindo que o repositório está sendo usado corretamente pelo serviço.
-**4. **Teste de Exceção ao Salvar no Repositório:** Este teste simulou uma exceção ao salvar no repositório para verificar como o serviço lida com falhas durante a persistência de dados.
+- **1. **Teste de Criação de Usuário com Dados Válidos:** Este teste verificou a criação de um usuário com dados válidos. Confirmamos que o método novoUsuario chama o método save do repositório corretamente e que o UsuarioDTO retornado contém os dados esperados.
+Incluímos verificações para cada campo do DTO, garantindo que os valores correspondem aos do objeto Usuario original.
+
+- **2. **Teste de Criação de Usuário com Dados Inválidos:** Este teste simulou a tentativa de criar um usuário com dados inválidos, como campos obrigatórios ausentes ou valores incorretos. O teste verificou como o sistema lida com campos como CPF, e-mail e outros valores importantes.
+
+- **3. **Teste de Salvamento do Repositório:** Este teste verificou se o método save do repositório foi chamado com o objeto Usuario correto, garantindo que o repositório está sendo usado corretamente pelo serviço.
+
+- **4. **Teste de Exceção ao Salvar no Repositório:** Este teste simulou uma exceção ao salvar no repositório para verificar como o serviço lida com falhas durante a persistência de dados.
+
  # **Conclusão**
 Os testes realizados abordaram casos de teste importantes para o método calculoImca e para a exibição da tabela IMC. Durante o processo, problemas foram identificados e corrigidos, garantindo que os testes fossem executados com sucesso. Com esses testes, foi possível verificar a funcionalidade correta do serviço ImcCalculatorService, bem como a precisão e a robustez do cálculo do IMC.
 
