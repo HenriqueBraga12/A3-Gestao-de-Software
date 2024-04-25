@@ -83,14 +83,14 @@ O projeto utiliza um banco de dados H2 em memória por padrão. Não é necessá
 - **Simulação de Dependências:** Usamos Mockito para simular interações com o repositório ImcRepository.
 ---
 # **Casos de Teste**
-- **Exibir Tabela IMC**
+**1.** **Exibir Tabela IMC**
 Propósito: Testar o método exibirTabelaImc, garantindo que ele retorna a lista de registros como objetos ImcTableDto.
 Testes Realizados:
 - **Caso 1**: Verificou se a tabela era exibida corretamente com valores simulados.
   
 - **Caso 2**: Testou a exibição da tabela sem dados para garantir que o resultado seria uma lista vazia.
   
-- **Cálculo do IMC**
+**2.** **Cálculo do IMC**
 Propósito: Testar o método calculoImca, que calcula o IMC com base em peso e altura e retorna uma classificação correspondente.
 Testes Realizados:
  - **Caso 1:** Testou a classificação do IMC no intervalo "Normal", garantindo que o método calculasse o valor do IMC e atribuísse a classificação correta.
@@ -101,7 +101,7 @@ Testes Realizados:
     
  - **Caso 4:** Testou uma condição fora do intervalo conhecido, garantindo que o método retornasse uma classificação nula para valores de IMC fora dos limites conhecidos.
 
-- **Testes para Criação de Usuários**
+**3.** **Testes para Criação de Usuários**
   
 - **Teste de Criação de Usuário com Dados Válidos:** Este teste verificou a criação de um usuário com dados válidos. Confirmamos que o método novoUsuario chama o método save do repositório corretamente e que o UsuarioDTO retornado contém os dados esperados.
 Incluímos verificações para cada campo do DTO, garantindo que os valores correspondem aos do objeto Usuario original.
