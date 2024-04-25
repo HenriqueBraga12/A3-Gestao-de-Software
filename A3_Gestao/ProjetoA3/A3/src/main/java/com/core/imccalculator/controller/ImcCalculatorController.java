@@ -32,7 +32,7 @@ public class ImcCalculatorController {
 
         Double peso = requestBody.get("peso");
         Double altura = requestBody.get("altura");
-        ImcValueDto imcValueDto = imcCalculatorService.calculoImca(peso, altura);
+        ImcValueDto imcValueDto = imcCalculatorService.calculoImc(peso, altura);
         return ResponseEntity.ok(imcValueDto);
     }
 }
