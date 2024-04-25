@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="trt5-nexus-public" />
+      <option name="name" value="trt5-nexus-public" />
+      <option name="url" value="https://nexus2.trt5.jus.br/repository/maven-public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="my-alternate-repository" />
+      <option name="name" value="my-alternate-repository" />
+      <option name="url" value="https://maven.repository.redhat.com/ga/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="trt5-nexus-snapshot" />
+      <option name="name" value="trt5-nexus-snapshot" />
+      <option name="url" value="https://nexus2.trt5.jus.br/repository/trt5-snapshots/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="trt5-nexus" />
+      <option name="name" value="trt5-nexus" />
+      <option name="url" value="https://nexus2.trt5.jus.br/repository/trt5/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="CSJT-Release" />
+      <option name="name" value="Repositorio de Releases do CSJT" />
+      <option name="url" value="http://portal.pje.redejt/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="CSJT-Snapshot" />
+      <option name="name" value="Repositorio de SNAPSHOTs do CSJT" />
+      <option name="url" value="http://portal.pje.redejt/nexus/repository/snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="pje-releases" />
+      <option name="name" value="pje-releases" />
+      <option name="url" value="http://portal.pje.redejt/nexus/repository/releases" />
+    </remote-repository>
+  </component>
+</project>

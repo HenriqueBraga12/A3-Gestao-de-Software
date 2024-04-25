@@ -33,7 +33,7 @@ public class ImcCalculatorService {
         return imcTableDtos;
     }
 
-    public ImcValueDto calculoImca(Double peso, Double altura) {
+    public ImcValueDto calculoImc(Double peso, Double altura) {
 
         Double imc = peso / Math.pow(altura, 2);
         String classificacao = new String();
@@ -47,8 +47,9 @@ public class ImcCalculatorService {
             } else if (c > 0 && imc <= tbImcList.get(c).getImc()) {
                 classificacao = tbImcList.get(c).getClassificacao();
                 break; // Sai do loop assim que encontrar a classificação
+            } else if ( imc > 40.0){
+                classificacao =  tbImcList.get(5).getClassificacao();
             }
-
         }
         return new ImcValueDto(imc, classificacao);
     }
