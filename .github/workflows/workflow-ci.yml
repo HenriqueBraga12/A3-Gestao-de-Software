@@ -18,10 +18,7 @@ jobs:
           distribution: 'temurin'
           architecture: x64
           cache: maven
-      - name: Print current directory
-        run: pwd
-      - name: Build with Maven
-        run: mvn -B package -f A3_Gestao/ProjetoA3/A3/pom.xml
+
 
   build:
     runs-on: ubuntu-latest
@@ -33,7 +30,12 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Build with Maven
-        run: mvn -B package -f A3_Gestao/ProjetoA3/A3/pom.xml
+        run:  |
+          mvn -B package -f A3_Gestao/ProjetoA3/A3/pom.xml
+          if [ $? -ne 0 ]; then
+          echo "Build failed. Por favor cheque as suas mudanças e tente novamente."
+          exit 1
+          fi
   
   test:
     runs-on: ubuntu-latest
@@ -45,4 +47,9 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Run the Maven verify phase
-        run: mvn --batch-mode --update-snapshots verify -f A3_Gestao/ProjetoA3/A3/pom.xml
+        run: |
+          mvn --batch-mode --update-snapshots verify -f A3_Gestao/ProjetoA3/A3/pom.xml
+          if [ $? -ne 0 ]; then
+          echo "Build failed. Por favor cheque as suas mudanças e tente novamente."
+          exit 1
+          fi
