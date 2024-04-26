@@ -20,7 +20,6 @@ jobs:
           cache: maven
       - name: Validate Commit Message
         run: |
-          |
           # Regex to validate the type pattern
           REGEX="^((Merge[ a-z-]* branch.)|(Revert)|((build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\(.\))?!?: .))"
           
@@ -34,6 +33,7 @@ jobs:
           else
             echo >&2 "Valid commit message."
           fi
+          
 
   build:
     runs-on: ubuntu-latest
