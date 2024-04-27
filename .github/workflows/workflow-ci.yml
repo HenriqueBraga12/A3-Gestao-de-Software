@@ -46,7 +46,7 @@ jobs:
           distribution: 'temurin'
       - name: Build with Maven
         run:  |
-          mvn -B package -f pom.xml
+          mvn -B package -f /projetoA3/src/pom.xml
           if [ $? -ne 0 ]; then
             echo "Build failed. Por favor cheque as suas mudanças e tente novamente."
             exit 1
@@ -63,7 +63,7 @@ jobs:
           distribution: 'temurin'
       - name: Run the Maven verify phase
         run: |
-          mvn --batch-mode --update-snapshots verify -f pom.xml
+          mvn --batch-mode --update-snapshots verify -f /projetoA3/src/pom.xml
           if [ $? -ne 0 ]; then
             echo "Build failed. Por favor cheque as suas mudanças e tente novamente."
             exit 1
