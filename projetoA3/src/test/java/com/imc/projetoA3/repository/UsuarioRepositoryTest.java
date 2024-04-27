@@ -1,8 +1,16 @@
 package com.imc.projetoA3.repository;
 
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.data.redis.DataRedisTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ActiveProfiles;
 
+@DataJpaTest
 @ActiveProfiles("test")
 class UsuarioRepositoryTest {
+    @Test
+    void findAll(){
+
+    }
 
 }

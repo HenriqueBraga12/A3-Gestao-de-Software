@@ -4,7 +4,7 @@ package com.imc.projetoA3.service;
 import com.imc.projetoA3.dto.ImcTableDto;
 import com.imc.projetoA3.dto.ImcValueDto;
 import com.imc.projetoA3.entity.TbImc;
-import com.imc.projetoA3.repository.ImcRepository;
+import com.imc.projetoA3.repository.TbImcRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,11 +17,11 @@ import java.util.List;
 public class ImcCalculatorService {
 
     @Autowired
-    ImcRepository imcRepository;
+    TbImcRepository tbImcRepository;
 
     public List<ImcTableDto> exibirTabelaImc() {
 
-        List<TbImc> tbImcList = imcRepository.findAll();
+        List<TbImc> tbImcList = tbImcRepository.findAll();
         List<ImcTableDto> imcTableDtos = new ArrayList<>();
         log.info("Total de registros encontrados na tabela tb_imc: {}", tbImcList.size());
         for (TbImc tbImc : tbImcList) {
@@ -38,7 +38,7 @@ public class ImcCalculatorService {
 
         double imc = peso / Math.pow(altura, 2);
         String classificacao = null;
-        List<TbImc> tbImcList = imcRepository.findAll();
+        List<TbImc> tbImcList = tbImcRepository.findAll();
 
         if (imc > 0 && altura > 0){
             for (int c = 0; c < tbImcList.size(); c++) {
