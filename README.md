@@ -4,12 +4,12 @@ Materia: Gestão e qualidade de software
 
 Equipe: 
 Carlos Henrique Braga Bomfim (12723211573)  
-Marcos Guilherme Silva da Crus (12723123780)  
-Jailson Rodrigues de Neiva (12722131344)
-Júlio César Souza (12723120855)
-Lucas Ribeiro Santiago Nunes (12722118292)
-Marcos Guilherme Silva da Cruz (12723213780)
-Vinícius Ariel Ribeiro dos Santos (1232318365)
+Marcos Guilherme Silva da Crus (12723123780)    
+Jailson Rodrigues de Neiva (12722131344)  
+Júlio César Souza (12723120855)  
+Lucas Ribeiro Santiago Nunes (12722118292)  
+Marcos Guilherme Silva da Cruz (12723213780)  
+Vinícius Ariel Ribeiro dos Santos (1232318365)  
 
 ---
 # **Tabela de conteúdos**
