@@ -1,4 +1,4 @@
-package com.imc.projetoA3.entity;
+package com.imc.projeto.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,15 +10,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tb_imc")
-public class TbImc {
+public class TabelaImc {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    public Long id;
 
     @Column(name = "imc")
-    private Double imc;
+    public Double imc;
 
     @Column(name = "classificacao")
-    private String classificacao;
+    public String classificacao;
 }

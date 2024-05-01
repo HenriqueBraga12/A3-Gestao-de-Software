@@ -1,12 +1,18 @@
-package com.imc.projetoA3.entity;
+package com.imc.projeto.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_usuario")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Usuario {
 
     @Id
@@ -20,16 +26,9 @@ public class Usuario {
     @Column(name = "user_email")
     private String email;
 
-    @Column(name = "user_cpf")
-    private String cpf;
+    @Column(name = "registro_imc")
+    @OneToMany(mappedBy = "usuario")
+    List<RegistroImc> registroImcList;
 
-    @OneToOne(mappedBy = "dataUser", cascade = CascadeType.ALL)
-    private Endereco endereco;
-
-    @Column(name = "peso")
-    private Double peso;
-
-    @Column (name = "altura")
-    private Double altura;
 
 }

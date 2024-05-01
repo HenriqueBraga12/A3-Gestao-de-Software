@@ -1,7 +1,7 @@
-package com.imc.projetoA3.dto;
+package com.imc.projeto.dto;
 
 
-import com.imc.projetoA3.entity.Usuario;
+import com.imc.projeto.entity.Usuario;
 
 public record EnderecoDTO (Long idEndereco,
                            Usuario dataUser,

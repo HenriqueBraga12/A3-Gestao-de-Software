@@ -1,4 +1,4 @@
-package com.imc.projetoA3;
+package com.imc.projeto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.imc.projetoA3.dto;
+package com.imc.projeto.dto;
 
 public record ImcValueDto (Double imc,
                            String classificacao) {

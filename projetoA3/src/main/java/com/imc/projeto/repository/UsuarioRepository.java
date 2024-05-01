@@ -1,6 +1,6 @@
-package com.imc.projetoA3.repository;
+package com.imc.projeto.repository;
 
-import com.imc.projetoA3.entity.Usuario;
+import com.imc.projeto.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
