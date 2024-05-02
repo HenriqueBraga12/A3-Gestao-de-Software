@@ -2,7 +2,9 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: '*'
+    branches:
+      - '*'
+      - 'release'
   pull_request:
     branches: '*'
 
@@ -68,14 +70,15 @@ jobs:
             echo "Build failed. Por favor cheque as suas mudanças e tente novamente."
             exit 1
           fi
-  
-  ##release:
-    ##runs-on: ubuntu-latest
-    ##needs: test
-    ##steps:
-      ##- name: Install semantic-release
-        ##run: npm install -g semantic-release@17 @semantic-release/git@10
-      ##- name: Semantic Release
-        ##run: semantic-release
-        ##env:
-          ##GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  release:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/release' # adicionada condição para acionar apenas na branch 'release'
+    steps:
+      - name: Install semantic-release
+        run: npm install -g semantic-release@17 @semantic-release/git@10
+      - name: Semantic Release
+        run: semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
