@@ -24,7 +24,7 @@ jobs:
       - name: Validate Commit Message
         run: |
           # Regex to validate the type pattern
-          REGEX="^((Merge[ a-z-]* branch.)|(Revert)|((build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\(.\))?!?: .))"
+          REGEX="^((Merge[ a-z-]* branch.)|(Revert)|((build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|Message)(\(.\))?!?: .))"
           
           COMMIT_MESSAGE=$(git log --format=%B -n 1 $GITHUB_SHA)
           
