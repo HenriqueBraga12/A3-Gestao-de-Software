@@ -1,5 +1,6 @@
 package com.imc.projeto.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +20,8 @@ public class RegistroImc {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario")
+    @JsonIgnore
+    @JoinColumn(name = "user_id")
     private Usuario usuario;
 
     @Column(name = "imc")
@@ -36,7 +38,4 @@ public class RegistroImc {
 
     @Column(name = "altura")
     private Double altura;
-
-
-
 }

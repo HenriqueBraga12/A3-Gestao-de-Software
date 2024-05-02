@@ -11,6 +11,7 @@ import com.imc.projeto.repository.UsuarioRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,6 +29,7 @@ public class UsuarioService {
     RegistroRepository registroRepository;
 
 
+    @Transactional
     public UsuarioDTO novoUsuario(Usuario usuario) {
 
         usuarioRepository.save(usuario);
@@ -37,6 +39,7 @@ public class UsuarioService {
 
             registroImc.setImc(imcValueDto.imc());
             registroImc.setClassificacao(imcValueDto.classificacao());
+            registroImc.setUsuario(usuario);
             registroRepository.save(registroImc);
         }
         return new UsuarioDTO(usuario.getIdUsuario(),
@@ -45,6 +48,7 @@ public class UsuarioService {
                 usuario.getRegistroImcList());
     }
 
+    @Transactional
     public void novoRegistroImc(RegistroImc registroImc){
 
         ImcValueDto imcValueDto = imcCalculatorService.calculoImc(registroImc.getPeso(),registroImc.getAltura());
