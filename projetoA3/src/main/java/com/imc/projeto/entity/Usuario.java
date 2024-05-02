@@ -26,9 +26,6 @@ public class Usuario {
     @Column(name = "user_email")
     private String email;
 
-    @Column(name = "registro_imc")
     @OneToMany(mappedBy = "usuario")
     List<RegistroImc> registroImcList;
-
-
 }
