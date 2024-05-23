@@ -70,15 +70,7 @@ jobs:
           if [ $? -ne 0 ]; then
             echo "Build failed. Por favor cheque as suas mudanças e tente novamente." 
              exit 1     
-      - name: Set up FTP Client
-        run: |
-          sudo apt-get install -y lftp 
-          chmod +x script.sh        
-
-      - name: Execute Script and Deploy Reports
-        run: |
-          ./script.sh  
-          fi 
+           fi
            
 
   release:
