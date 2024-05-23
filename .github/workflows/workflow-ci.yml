@@ -69,6 +69,7 @@ jobs:
           mvn --batch-mode --update-snapshots verify -f projetoA3/pom.xml
           if [ $? -ne 0 ]; then
             echo "Build failed. Por favor cheque as suas mudanças e tente novamente." 
+             exit 1     
       - name: Set up FTP Client
         run: |
           sudo apt-get install -y lftp 
@@ -77,8 +78,8 @@ jobs:
       - name: Execute Script and Deploy Reports
         run: |
           ./script.sh  
-            exit 1
-          fi
+          fi 
+           
 
   release:
     runs-on: ubuntu-latest
