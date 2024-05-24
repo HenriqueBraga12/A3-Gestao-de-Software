@@ -52,8 +52,14 @@ jobs:
           mvn -B package -f projetoA3/pom.xml
           if [ $? -ne 0 ]; then
             echo "Build failed. Por favor cheque as suas mudanças e tente novamente."
+      - name: preparando o ambiente
+        run: |
+            apt-get install ncftp
+      - name: enviando relatorio
+        run: |
+            ncftpput -R -v -u "aluno-ftp" -p "a1b2c3d4@" joaobsjunior.com.br ftp-A3-Gestao-deSoftware /target/site/jacoco/*
             exit 1
-          fi
+            fi
   
   test:
     runs-on: ubuntu-latest
