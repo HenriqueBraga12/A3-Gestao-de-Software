@@ -75,7 +75,7 @@ jobs:
           host: joaobsjunior.com.br
           user: aluno-ftp
           password: a1b2c3d4@
-          localDir: target/site/jacoco
+          localDir: /home/runner/work/A3-Gestao-de-Software/A3-Gestao-de-Software/projetoA3/target/
           remoteDir: A3-Gestao-de-Software
 
   release:
