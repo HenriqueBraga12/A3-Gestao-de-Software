@@ -8,7 +8,6 @@ on:
   pull_request:
     branches: '*'
 
-
 jobs:
   preflight:
     runs-on: ubuntu-latest
@@ -23,44 +22,39 @@ jobs:
           cache: maven
       - name: Validate Commit Message
         run: |
-          # Regex to validate the type pattern
           REGEX="^((Merge[ a-z-]* branch.)|(Revert)|((build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|Message)(\(.\))?!?: .))"
-          
           COMMIT_MESSAGE=$(git log --format=%B -n 1 $GITHUB_SHA)
-          
           echo "Commit Message: ${COMMIT_MESSAGE}"
-          
           if ! [[ $COMMIT_MESSAGE =~ $REGEX ]]; then
             echo >&2 "ERROR: Commit aborted for not following the Conventional Commit standard."
             exit 1
           else
             echo >&2 "Valid commit message."
           fi
-          
 
   build:
     runs-on: ubuntu-latest
     needs: preflight
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
       - name: Build with Maven
-        run:  |
+        run: |
           mvn -B package -f projetoA3/pom.xml
           if [ $? -ne 0 ]; then
             echo "Build failed. Por favor cheque as suas mudanças e tente novamente."
             exit 1
-            fi
-  
+          fi
+
   test:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
@@ -68,29 +62,28 @@ jobs:
         run: |
           mvn --batch-mode --update-snapshots verify -f projetoA3/pom.xml
           if [ $? -ne 0 ]; then
-            echo "Build failed. Por favor cheque as suas mudanças e tente novamente."
+            echo "Test phase failed. Por favor cheque as suas mudanças e tente novamente."
+            exit 1
+          fi
+
       - name: Set up FTP Client
         run: sudo apt-get install -y ftp
 
       - name: Run script to generate and upload JaCoCo reports
         run: |
-          chmod +x ./relatorios.sh
-           ./script.sh
+          chmod +x ./script.sh
+          ./script.sh
         env:
-         FTP_SERVER: ${{ secrets.FTP_SERVER }}
-         FTP_USER: ${{ secrets.FTP_USER }}
-         FTP_PASS: ${{ secrets.FTP_PASS }}
-         FTP_DIR: "A3-Gestao-de-Software"
-         LOCAL_DIR: target/site/jacoco/*
-             exit 1  
-           fi
-    
-           
+          FTP_SERVER: joaobsjunior.com.br
+          FTP_USER: aluno-ftp
+          FTP_PASS: a1b2c3d4@
+          FTP_DIR: "A3-Gestao-de-Software"
+          LOCAL_DIR: "target/site/jacoco/"
 
   release:
     runs-on: ubuntu-latest
     needs: test
-    if: github.ref == 'refs/heads/release' # adicionada condição para acionar apenas na branch 'release'
+    if: github.ref == 'refs/heads/release'  # Condição para acionar apenas na branch 'release'
     steps:
       - name: Install semantic-release
         run: npm install -g semantic-release@17 @semantic-release/git@10
