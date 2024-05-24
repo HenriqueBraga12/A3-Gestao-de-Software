@@ -15,7 +15,7 @@ mvn jacoco:report
 # Verifica se o diretório de relatórios existe
 if [ -d "$LOCAL_DIR" ]; then
   # Comando para enviar os relatórios para o servidor FTP
-  cd "$LOCAL_DIR" || exit
+  cd "$LOCAL_DIR" 
   ftp -n "$FTP_SERVER" <<END_SCRIPT
 quote USER "$FTP_USER"
 quote PASS "$FTP_PASS"
