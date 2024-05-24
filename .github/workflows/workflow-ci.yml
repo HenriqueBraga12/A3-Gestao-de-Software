@@ -71,6 +71,7 @@ jobs:
 
       - name: Run script to generate and upload JaCoCo reports
         run: |
+          mvn jacoco:report
           cd .github/workflows/
           chmod +x ./script.sh
           ./script.sh
@@ -79,7 +80,7 @@ jobs:
           FTP_USER: aluno-ftp
           FTP_PASS: a1b2c3d4@
           FTP_DIR: "A3-Gestao-de-Software"
-          LOCAL_DIR: "/home/runner/work/A3-Gestao-de-Software/A3-Gestao-de-Software/projetoA3/target/site/jacoco/"
+          LOCAL_DIR: "target/site/jacoco/"
 
   release:
     runs-on: ubuntu-latest
