@@ -71,6 +71,7 @@ jobs:
 
       - name: Run script to generate and upload JaCoCo reports
         run: |
+          cd .github/workflows/
           chmod +x ./script.sh
           ./script.sh
         env:
