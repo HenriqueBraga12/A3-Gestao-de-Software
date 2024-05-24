@@ -16,11 +16,12 @@ mvn jacoco:report
 if [ -d "$LOCAL_DIR" ]; then
   # Comando para enviar os relatórios para o servidor FTP
   cd "$LOCAL_DIR" 
-  ftp -n "$FTP_SERVER" <<END_SCRIPT
+ ftp -n "$FTP_SERVER" <<END_SCRIPT
 quote USER "$FTP_USER"
 quote PASS "$FTP_PASS"
 mkdir "$FTP_DIR"
 cd "$FTP_DIR"
+lcd $LOCAL_DIR
 mput *
 quit
 END_SCRIPT
