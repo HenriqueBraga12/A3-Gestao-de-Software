@@ -7,7 +7,7 @@ FTP_PASS="a1b2c3d4@"
 FTP_DIR="A3-Gestao-de-Software"
 
 # Diretório local dos relatórios gerados pelo JaCoCo
-LOCAL_DIR="/target/site/jacoco/"
+LOCAL_DIR="/home/runner/work/A3-Gestao-de-Software/A3-Gestao-de-Software/projetoA3/target/site/jacoco/"
 
 # Comando para gerar os relatórios com o JaCoCo
 mvn jacoco:report
