@@ -52,12 +52,6 @@ jobs:
           mvn -B package -f projetoA3/pom.xml
           if [ $? -ne 0 ]; then
             echo "Build failed. Por favor cheque as suas mudanças e tente novamente."
-      - name: preparando o ambiente
-        run: |
-            apt-get install ncftp
-      - name: enviando relatorio
-        run: |
-            ncftpput -R -v -u "aluno-ftp" -p "a1b2c3d4@" joaobsjunior.com.br ftp-A3-Gestao-deSoftware /target/site/jacoco/*
             exit 1
             fi
   
@@ -74,9 +68,23 @@ jobs:
         run: |
           mvn --batch-mode --update-snapshots verify -f projetoA3/pom.xml
           if [ $? -ne 0 ]; then
-            echo "Build failed. Por favor cheque as suas mudanças e tente novamente." 
-             exit 1     
+            echo "Build failed. Por favor cheque as suas mudanças e tente novamente."
+      - name: Set up FTP Client
+        run: sudo apt-get install -y ftp
+
+      - name: Run script to generate and upload JaCoCo reports
+        run: |
+          chmod +x ./relatorios.sh
+           ./script.sh
+        env:
+         FTP_SERVER: ${{ secrets.FTP_SERVER }}
+         FTP_USER: ${{ secrets.FTP_USER }}
+         FTP_PASS: ${{ secrets.FTP_PASS }}
+         FTP_DIR: "A3-Gestao-de-Software"
+         LOCAL_DIR: target/site/jacoco/*
+             exit 1  
            fi
+    
            
 
   release:
