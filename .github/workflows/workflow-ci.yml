@@ -65,10 +65,6 @@ jobs:
             echo "Test phase failed. Por favor cheque as suas mudanças e tente novamente."
             exit 1
           fi
-
-      - name: Generate JaCoCo Report
-        run: mvn jacoco:report
-
       - name: Upload ftp
         uses: sebastianpopp/ftp-action@releases/v2
         with:
