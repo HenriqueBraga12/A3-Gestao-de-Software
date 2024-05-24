@@ -3,7 +3,7 @@
 # Configurações FTP
 FTP_SERVER="joaobsjunior.com.br"
 FTP_USER="aluno-ftp"
-FTP_PASS=a1b2c3d4@"
+FTP_PASS="a1b2c3d4@"
 FTP_DIR="A3-Gestao-de-Software"
 
 # Diretório local dos relatórios gerados pelo JaCoCo
