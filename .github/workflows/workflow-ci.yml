@@ -66,11 +66,9 @@ jobs:
             exit 1
           fi
 
-      - name: Set up FTP Client
-        run: sudo apt-get install -y ftp
+      - name: Generate JaCoCo Report
+        run: mvn jacoco:report
 
-      - name: Run script to generate and upload JaCoCo reports
-      - uses: actions/checkout@v2
       - name: Upload ftp
         uses: sebastianpopp/ftp-action@releases/v2
         with:
