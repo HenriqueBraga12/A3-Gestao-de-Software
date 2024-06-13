@@ -1,8 +1,9 @@
-package com.imc.projeto.service;
+package com.imc.projeto.unit.service;
 
 import com.imc.projeto.dto.ImcValueDto;
 import com.imc.projeto.entity.TabelaImc;
 import com.imc.projeto.repository.TbImcRepository;
+import com.imc.projeto.service.ImcCalculatorService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

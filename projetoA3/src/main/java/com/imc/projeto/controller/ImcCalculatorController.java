@@ -1,22 +1,22 @@
 package com.imc.projeto.controller;
 
 
-import com.imc.projeto.dto.ImcValueDto;
 import com.imc.projeto.entity.TabelaImc;
 import com.imc.projeto.service.ImcCalculatorService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/imcCalculator")
 public class ImcCalculatorController {
 
-    @Autowired
-    ImcCalculatorService imcCalculatorService;
+    private final ImcCalculatorService imcCalculatorService;
+
+    public ImcCalculatorController(ImcCalculatorService imcCalculatorService) {
+        this.imcCalculatorService = imcCalculatorService;
+    }
 
     @GetMapping()
     public ResponseEntity<List<TabelaImc>> exibirTabelaImc() {

@@ -1,4 +1,4 @@
-package com.imc.projeto.controller;
+package com.imc.projeto.integration.controller;
 
 import com.imc.projeto.dto.UsuarioDTO;
 import com.imc.projeto.entity.RegistroImc;
@@ -13,11 +13,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.*;
-import org.springframework.test.web.servlet.MockMvc;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package com.imc.projeto.service;
+package com.imc.projeto.unit.service;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.junit.jupiter.api.Assertions.*;

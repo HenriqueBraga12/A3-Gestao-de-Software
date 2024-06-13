@@ -1,4 +1,4 @@
-package com.imc.projeto.service;
+package com.imc.projeto.unit.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
@@ -8,6 +8,8 @@ import com.imc.projeto.dto.UsuarioDTO;
 import com.imc.projeto.entity.RegistroImc;
 import com.imc.projeto.entity.Usuario;
 import com.imc.projeto.repository.UsuarioRepository;
+import com.imc.projeto.service.ImcCalculatorService;
+import com.imc.projeto.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
