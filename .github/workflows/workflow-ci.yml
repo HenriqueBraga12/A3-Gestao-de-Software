@@ -134,7 +134,8 @@ jobs:
     steps:
       - name: Install semantic-release
         run: npm install -g semantic-release@17 @semantic-release/git@10
-
+      - name: Debug GitHub Ref
+        run: echo "GitHub Ref is ${{ github.ref }}"
       - name: Semantic Release
         run: semantic-release
         env:
