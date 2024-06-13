@@ -91,6 +91,7 @@ jobs:
           localDir: /home/runner/work/A3-Gestao-de-Software/A3-Gestao-de-Software/projetoA3/target/site/jacoco
           remoteDir: A3-Gestao-de-Software
 
+
   release:
     runs-on: ubuntu-latest
     needs: integration-test
