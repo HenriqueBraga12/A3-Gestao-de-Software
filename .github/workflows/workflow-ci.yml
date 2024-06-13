@@ -47,11 +47,11 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        working-directory: projetoA3  # Define o diretório correto
+        working-directory: projetoA3
         run: |
-          mvn -B package -f pom.xml  # Executa o Maven no diretório projetoA3/pom.xml
+          mvn -B package -f pom.xml
           if [ $? -ne 0 ]; then
-            echo "Build failed. Por favor cheque as suas mudanças e tente novamente."
+            echo "Build failed. Please check your changes and try again."
             exit 1
           fi
 
@@ -68,11 +68,11 @@ jobs:
           distribution: 'temurin'
 
       - name: Run unit tests
-        working-directory: projetoA3  # Define o diretório correto
+        working-directory: projetoA3
         run: |
-          mvn --batch-mode --update-snapshots test -f pom.xml  # Executa os testes no diretório projetoA3/pom.xml
+          mvn --batch-mode --update-snapshots test -f pom.xml
           if [ $? -ne 0 ]; then
-            echo "Unit test phase failed. Por favor cheque as suas mudanças e tente novamente."
+            echo "Unit test phase failed. Please check your changes and try again."
             exit 1
           fi
 
@@ -90,11 +90,11 @@ jobs:
           distribution: 'temurin'
 
       - name: Run integration tests
-        working-directory: projetoA3  # Define o diretório correto
+        working-directory: projetoA3
         run: |
-          mvn --batch-mode --update-snapshots verify -f pom.xml  # Executa os testes de integração no diretório projetoA3/pom.xml
+          mvn --batch-mode --update-snapshots verify -f pom.xml
           if [ $? -ne 0 ]; then
-            echo "Integration test phase failed. Por favor cheque as suas mudanças e tente novamente."
+            echo "Integration test phase failed. Please check your changes and try again."
             exit 1
           fi
 
@@ -104,7 +104,7 @@ jobs:
           host: ${{ secrets.FTP_HOST }}
           user: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: projetoA3/target/site/jacoco  # Define o diretório correto
+          localDir: projetoA3/target/site/jacoco
           remoteDir: A3-Gestao-de-Software
 
   sonar-analysis:
@@ -120,7 +120,7 @@ jobs:
           distribution: 'temurin'
 
       - name: SonarCloud Scan
-        working-directory: projetoA3  # Define o diretório correto
+        working-directory: projetoA3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
