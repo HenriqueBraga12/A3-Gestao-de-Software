@@ -147,6 +147,7 @@ jobs:
         run: npm install semantic-release @semantic-release/git
 
       - name: Semantic Release
+        working-directory: projetoA3  # Definindo o diretório de trabalho
         run: |
           npx semantic-release
         env:
