@@ -137,21 +137,34 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          working-directory: projetoA3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Definindo a versão 20 do Node.js
+          node-version: '20'
+          working-directory: projetoA3
+
+      - name: Clean npm cache and install dependencies
+        run: |
+          npm cache clean --force
+          rm -rf node_modules
+          npm install
+          npm install yargs@latest
+        working-directory: projetoA3
 
       - name: Install Semantic Release
-        run: npm install semantic-release @semantic-release/git
+        run: npm install -g semantic-release @semantic-release/git
+        working-directory: projetoA3
 
       - name: Semantic Release
-        working-directory: projetoA3  # Definindo o diretório de trabalho
-        run: |
-          npx semantic-release
+        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        working-directory: projetoA3
 
       - name: Do something when a new release published
         if: steps.semantic.outputs.new_release_published == 'true'
@@ -160,3 +173,4 @@ jobs:
           echo ${{ steps.semantic.outputs.new_release_major_version }}
           echo ${{ steps.semantic.outputs.new_release_minor_version }}
           echo ${{ steps.semantic.outputs.new_release_patch_version }}
+        working-directory: projetoA3
