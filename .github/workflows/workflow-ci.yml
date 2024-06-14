@@ -47,7 +47,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        working-directory: A3-Gestao-de-Software
+        working-directory: projetoA3
         run: |
           mvn -B package -f pom.xml
           if [ $? -ne 0 ]; then
@@ -68,7 +68,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Run unit tests
-        working-directory: A3-Gestao-de-Software
+        working-directory: projetoA3
         run: |
           mvn --batch-mode --update-snapshots test -f pom.xml
           if [ $? -ne 0 ]; then
@@ -90,7 +90,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Run integration tests
-        working-directory: A3-Gestao-de-Software
+        working-directory: projetoA3
         run: |
           mvn --batch-mode --update-snapshots verify -f pom.xml
           if [ $? -ne 0 ]; then
@@ -104,7 +104,7 @@ jobs:
           host: ${{ secrets.FTP_HOST }}
           user: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: target/site/jacoco
+          localDir: projetoA3/target/site/jacoco
           remoteDir: A3-Gestao-de-Software
 
   sonar-analysis:
@@ -120,7 +120,7 @@ jobs:
           distribution: 'temurin'
 
       - name: SonarCloud Scan
-        working-directory: A3-Gestao-de-Software
+        working-directory: projetoA3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -141,12 +141,15 @@ jobs:
           node-version: '20'  # Define a versão do Node.js para 20.x.x
           check-latest: true  # Verifica e usa a versão mais recente dentro da série especificada
 
-      - name: Install dependencies
-        working-directory: A3-Gestao-de-Software
-        run: npm ci
+      - name: Debug GitHub Ref
+        run: echo "GitHub Ref is ${{ github.ref }}"
+
+      - name: Install semantic-release
+        run: npm install -g semantic-release @semantic-release/git
 
       - name: Semantic Release
-        working-directory: A3-Gestao-de-Software
-        run: npx semantic-release
+        run: |
+          cd $GITHUB_WORKSPACE  # Garante que estamos no diretório raiz do repositório
+          npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
