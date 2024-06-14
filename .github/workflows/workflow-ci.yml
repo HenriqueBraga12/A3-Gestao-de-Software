@@ -141,9 +141,6 @@ jobs:
           node-version: '20'  # Define a versão do Node.js para 20.x.x
           check-latest: true  # Verifica e usa a versão mais recente dentro da série especificada
 
-      - name: Debug GitHub Ref
-        run: echo "GitHub Ref is ${{ github.ref }}"
-
       - name: Install semantic-release
         run: npm install -g semantic-release @semantic-release/git
 
