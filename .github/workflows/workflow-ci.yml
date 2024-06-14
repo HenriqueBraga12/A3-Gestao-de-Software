@@ -147,6 +147,6 @@ jobs:
       - name: Semantic Release
         run: |
           cd $GITHUB_WORKSPACE  # Garante que estamos no diretório raiz do repositório
-          npx semantic-release
+          npx semantic-release --branch main --ci true
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
