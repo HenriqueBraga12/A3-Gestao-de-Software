@@ -47,6 +47,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
+        working-directory: A3-Gestao-de-Software
         run: |
           mvn -B package -f pom.xml
           if [ $? -ne 0 ]; then
@@ -67,6 +68,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Run unit tests
+        working-directory: A3-Gestao-de-Software
         run: |
           mvn --batch-mode --update-snapshots test -f pom.xml
           if [ $? -ne 0 ]; then
@@ -88,6 +90,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Run integration tests
+        working-directory: A3-Gestao-de-Software
         run: |
           mvn --batch-mode --update-snapshots verify -f pom.xml
           if [ $? -ne 0 ]; then
@@ -117,6 +120,7 @@ jobs:
           distribution: 'temurin'
 
       - name: SonarCloud Scan
+        working-directory: A3-Gestao-de-Software
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -138,9 +142,11 @@ jobs:
           check-latest: true  # Verifica e usa a versão mais recente dentro da série especificada
 
       - name: Install dependencies
+        working-directory: A3-Gestao-de-Software
         run: npm ci
 
       - name: Semantic Release
+        working-directory: A3-Gestao-de-Software
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
