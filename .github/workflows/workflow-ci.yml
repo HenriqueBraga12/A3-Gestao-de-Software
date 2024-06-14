@@ -141,10 +141,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '20'  # Definindo a versão 20 do Node.js
 
       - name: Install Semantic Release
-        run: npm install -g semantic-release @semantic-release/git
+        run: npm install semantic-release @semantic-release/git
 
       - name: Semantic Release
         run: |
