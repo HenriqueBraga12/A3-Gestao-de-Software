@@ -119,6 +119,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+
       - name: SonarCloud Scan
         working-directory: projetoA3
         env:
