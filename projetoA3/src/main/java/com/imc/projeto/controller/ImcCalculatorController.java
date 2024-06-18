@@ -38,4 +38,3 @@ public class ImcCalculatorController {
         return ResponseEntity.ok(imcValueDto);
     }
 }
-

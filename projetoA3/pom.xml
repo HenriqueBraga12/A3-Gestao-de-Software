@@ -92,6 +92,8 @@
                         <include>**/unit/**/*.java</include>
                     </includes>
                 </configuration>
+
+
             </plugin>
 
             <!-- Failsafe Plugin for Integration Tests -->
@@ -111,6 +113,18 @@
                     <includes>
                         <include>**/integration/**/*.java</include>
                     </includes>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.5.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                    <autoPublish>true</autoPublish>
+                    <waitUntil>published</waitUntil>
                 </configuration>
             </plugin>
         </plugins>
