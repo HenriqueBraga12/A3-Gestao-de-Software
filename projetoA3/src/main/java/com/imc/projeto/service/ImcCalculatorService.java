@@ -14,8 +14,11 @@ import java.util.List;
 @Slf4j
 public class ImcCalculatorService {
 
-    @Autowired
-    TbImcRepository tbImcRepository;
+    private final TbImcRepository tbImcRepository;
+
+    public ImcCalculatorService(TbImcRepository tbImcRepository) {
+        this.tbImcRepository = tbImcRepository;
+    }
 
     public List<TabelaImc> exibirTabelaImc() {
 
