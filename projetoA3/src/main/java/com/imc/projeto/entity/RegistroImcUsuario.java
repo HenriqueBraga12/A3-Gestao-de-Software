@@ -7,14 +7,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
-import java.util.Date;
 
 @Entity
 @Table(name = "tb_registro_imc")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegistroImc {
+public class RegistroImcUsuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_registro")

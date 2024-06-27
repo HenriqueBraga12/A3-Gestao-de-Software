@@ -1,11 +1,11 @@
 package com.imc.projeto.dto;
 
-import com.imc.projeto.entity.RegistroImc;
+import com.imc.projeto.entity.RegistroImcUsuario;
 
 import java.util.List;
 
 public record ListarUsuariosDTO(Long idUsuario,
                                 String name,
                                 String email,
-                                List<RegistroImc> registroImcList) {
+                                List<RegistroImcUsuario> registroImcUsuarioList) {
 }

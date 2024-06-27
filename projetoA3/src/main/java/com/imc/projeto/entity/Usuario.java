@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.NotFound;
 
 import java.util.List;
 
@@ -20,12 +21,12 @@ public class Usuario {
     @JsonProperty("user_id")
     private Long idUsuario;
 
-    @Column(name = "user_name")
+    @Column(name = "user_name", nullable = false)
     private String name;
 
-    @Column(name = "user_email")
+    @Column(name = "user_email", nullable = false)
     private String email;
 
-    @OneToMany(mappedBy = "usuario")
-    List<RegistroImc> registroImcList;
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    List<RegistroImcUsuario> registroImcUsuarioList;
 }

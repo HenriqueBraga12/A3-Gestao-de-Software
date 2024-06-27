@@ -5,7 +5,6 @@ import com.imc.projeto.dto.ImcValueDto;
 import com.imc.projeto.entity.TabelaImc;
 import com.imc.projeto.repository.TbImcRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,7 +24,7 @@ public class ImcCalculatorService {
         return tbImcRepository.findAll();
     }
 
-    public ImcValueDto calculoImc(Double peso, Double altura) {
+    public ImcValueDto calculoImc (Double peso, Double altura) {
 
         double imc = peso / Math.pow(altura, 2);
         String classificacao = null;
